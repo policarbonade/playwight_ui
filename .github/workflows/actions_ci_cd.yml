@@ -8,8 +8,6 @@ jobs:
   ci_cd:
     name: CI/CD Tests
     runs-on: ubuntu-latest
-#    env:
-#      HEADLESS: true
     steps:
       - uses: actions/checkout@v4
 
