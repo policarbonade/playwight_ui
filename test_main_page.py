@@ -2,11 +2,16 @@ import pytest
 from playwright.sync_api import expect
 import time
 import math
+from pages.base_page import BasePage
 
 
-def test_guest_can_go_to_login_page(page):
+def base_page_client():
+    self
+
+
+def test_guest_can_go_to_login_page(BasePage, page):
     link = "http://selenium1py.pythonanywhere.com/"
-    page.goto(link)
+    BasePage.open(link)
     login_link = page.locator("#login_link")
     login_link.click()
 
