@@ -2,18 +2,15 @@ import pytest
 from playwright.sync_api import expect
 import time
 import math
-from pages.base_page import BasePage
+from .pages.main_page import MainPage
 
 
-def base_page_client():
-    self
-
-
-def test_guest_can_go_to_login_page(BasePage, page):
+def test_guest_can_go_to_login_page(page):
     link = "http://selenium1py.pythonanywhere.com/"
-    BasePage.open(link)
-    login_link = page.locator("#login_link")
-    login_link.click()
+    # инициализируем Page Object, передаем в конструктор экземпляр драйвера и url
+    page = MainPage(page, link)
+    page.open()
+    page.go_to_login_page()
 
 
 # @pytest.mark.parametrize("link", [

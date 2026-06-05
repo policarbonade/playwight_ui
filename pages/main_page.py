@@ -1,4 +1,7 @@
-from pages.base_page import BasePage
+from .base_page import BasePage
+
 
 class MainPage(BasePage):
-    pass
+    def go_to_login_page(self):
+        login_link = self.page.locator("#login_link")
+        login_link.click()
