@@ -13,6 +13,13 @@ def test_guest_can_go_to_login_page(page):
     page.go_to_login_page()
 
 
+def test_guest_should_see_login_link(page):
+    link = "http://selenium1py.pythonanywhere.com/"
+    page = MainPage(page, link)
+    page.open()
+    page.should_be_login_link()
+
+
 # @pytest.mark.parametrize("link", [
 #     "https://stepik.org/lesson/236895/step/1",
 #     "https://stepik.org/lesson/236896/step/1",
